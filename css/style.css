@@ -1,0 +1,74 @@
+nav ul a,
+nav .brand-logo {
+  color: #4db6ac;
+}
+
+.navBar{
+  background-color:#00171c;
+}
+
+.page-footer .footer-copyright{
+  background-color:#00171c;
+}
+
+.teal2{
+  background-color: #004b5c;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.return{
+  color: #00171c;
+  font-weight: bold;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 800px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+.txt , .tituloTxt{
+  text-shadow: 3px 3px #000;
+}
+
+.tituloTxt{
+  margin-top: 20%; 
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
