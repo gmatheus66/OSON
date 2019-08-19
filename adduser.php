@@ -1,6 +1,6 @@
 <?php  
 include "conect.php";
-// include 'init.php';
+include 'funcs/init.php';
 
 $nome = $_POST["nome"] ?? "";
 $sobrenome = $_POST["sobrenome"] ?? "";
@@ -8,21 +8,39 @@ $cpf = $_POST["cpf"] ?? "";
 $email = $_POST["email"] ?? "";
 $senha = $_POST["senha"] ?? "";
 $conf_senha = $_POST["conf_senha"] ?? "";
-
+$username = $_POST["username"];
 $new_senha = md5($senha);
-var_dump($cpf);
-	
 
 try{
-	$smt = $conn-> prepare("SELECT name, password FROM users WHERE cpf = ?");
-	$smt-> bindParam(1, $cpf);
+
+	$smt = $conn-> prepare("SELECT cpf FROM users;");
+	// $smt-> bindParam(1, $cpf);
 	$smt-> execute();
 	$b_cpf = $smt->fetch();
 	var_dump($b_cpf);
 
+	$smmt = $conn -> prepare("SELECT username FROM users;");
+	$smmt -> execute();
+	$un= $smmt -> fetch();
+	var_dump($un);
+
 }catch(PDOException $ex){
 	 $ex -> getmessage();
 }
+
+// foreach ($un => $value) {
+// 	if ($un[$value] != $username) {
+// 		$teste = true;
+// 	}
+// }
+
+// foreach ($b_cpf => $value) {
+// 	if ($b_cpf[$value] != $cpf) {
+// 		$teste = true;
+// 	}
+// }
+
+
 if ($senha != $conf_senha){
 	redirect('cadastro.php?ml=Senhas não conferem');
 }
