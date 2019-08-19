@@ -29,6 +29,7 @@ create table users_series (
     current_season  boolean,
     current_episode int,
     completed       boolean,
+    note_serie    double,
     primary key (user_id, serie_id),
     foreign key (user_id) references users(id),
     foreign key (serie_id) references series(id)
@@ -51,11 +52,13 @@ insert into series (name, genre, seasons, synopsis, age_range, lauch_year, main_
     ('Breaking Bad', 'Drama', 5, '...',20, 1997,'dsadsa'),
     ('La Casa de Papel', 'Police',  2, '...',18,2000,'sadsad');
 
-insert into users_series (user_id, serie_id, current_season, current_episode) values
-    (1, 1, 1, 1),
-    (1, 2, 2, 4),
-    (1, 3, 1, 8),
-    (2, 2, 10, 2),
-    (2, 3, 8, 3),
-    (3, 3, 1, 2);
+insert into users_series (user_id, serie_id, current_season, current_episode,note_serie) values
+    (1, 1, 1, 1,6),
+    (1, 2, 2, 4,5),
+    (1, 3, 1, 8,9),
+    (2, 2, 10, 2,4),
+    (2, 3, 8, 3,4),
+    (3, 4, 1, 2,8),
+    (3, 2, 1, 2,9),
+    (3, 4, 1, 3,6);
 -- ENDSEED
