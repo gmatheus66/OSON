@@ -9,37 +9,43 @@ $email = $_POST["email"] ?? "";
 $senha = $_POST["senha"] ?? "";
 $conf_senha = $_POST["conf_senha"] ?? "";
 $username = $_POST["username"];
-$new_senha = md5($senha);
+$new_pass = md5($senha);
+
+$teste_cpf;
+$teste_un;
 
 try{
 
 	$smt = $conn-> prepare("SELECT cpf FROM users;");
 	// $smt-> bindParam(1, $cpf);
 	$smt-> execute();
-	$b_cpf = $smt->fetch();
+	$b_cpf = $smt->fetchAll();
 	var_dump($b_cpf);
 
 	$smmt = $conn -> prepare("SELECT username FROM users;");
 	$smmt -> execute();
-	$un= $smmt -> fetch();
+	$un= $smmt -> fetchAll();
 	var_dump($un);
 
 }catch(PDOException $ex){
 	 $ex -> getmessage();
 }
 
-// foreach ($un => $value) {
-// 	if ($un[$value] != $username) {
-// 		$teste = true;
-// 	}
-// }
+foreach ($b_cpf as $value_cpf) {
+	if ($b_cpf[$value_cpf] != $cpf) {
+		$teste_cpf = true;
+	}else{
+		$teste_cpf = false;
+	}
+}
 
-// foreach ($b_cpf => $value) {
-// 	if ($b_cpf[$value] != $cpf) {
-// 		$teste = true;
-// 	}
-// }
-
+foreach ($un as $value_un) {
+	if ($un[$value_un] != $un) {
+		$teste_un = true;
+	}else{
+		$teste_un = false;
+	}
+}
 
 if ($senha != $conf_senha){
 	redirect('cadastro.php?ml=Senhas não conferem');
@@ -51,5 +57,23 @@ if ($senha == '' || $conf_senha == " " || $conf_senha =='' || $conf_senha == nul
 
 if ($cpf == null || $cpf == " ") {
 	redirect('cadastro.php?mt=CPF invalido ou nulo');
+}
+
+if ($teste_cpf == true && $teste_un == true) {
+	try{
+
+		$oson = $con ->prepare("INSERT INTO users(name, username, email, password, cpf) VALUES (?, ?, ?, ?, ?)");
+		$oson -> bindParam(1, $nome);
+		$oson -> bindParam(2, $username);
+		$oson -> bindParam(3, $email);
+		$oson -> bindParam(4, $new_pass);
+		$oson -> bindParam(5, $cpf);
+		$oson -> execute();
+
+	}catch(Exception $ex){
+		print_r($ex);
+	}
+}else{
+	redirect("cadastro.php?mt=CPF invalido ou Username nulos");
 }
 ?>
