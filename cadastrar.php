@@ -33,7 +33,7 @@
          <input type="text" name="nome" placeholder="Nome">
         </div>
         <div class="input-field col s6">
-          <input type="text" name="sobrenome" placeholder="Sobrenome">
+          <input type="text" name="username" placeholder="Username">
         </div>
       </div>
       <div class="row">
