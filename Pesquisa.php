@@ -30,6 +30,9 @@
             border: 1px solid black;
             border-collapse: collapse;
         }
+        h1{
+          
+        }
         </style>
     </head>
     <body>
