@@ -60,6 +60,5 @@ insert into users_series (user_id, serie_id, current_season, current_episode,not
     (2, 2, 10, 2,4),
     (2, 3, 8, 3,4),
     (3, 4, 1, 2,8),
-    (3, 2, 1, 2,9),
-    (3, 4, 1, 3,6);
+    (3, 2, 1, 2,9);
 -- ENDSEED
