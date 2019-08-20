@@ -27,13 +27,13 @@
   <div class="div">
 <div class="form">
 <div class="row">
-    <form class="col s12" id="reg-form" action="adduser.php">
+    <form class="col s12" id="reg-form" method="POST" action="adduser.php">
       <div class="row">
         <div class="input-field col s6">
          <input type="text" name="nome" placeholder="Nome">
         </div>
         <div class="input-field col s6">
-          <input type="text" name="sobrenome" placeholder="Sobrenome">
+          <input type="text" name="username" placeholder="Username">
         </div>
       </div>
       <div class="row">
@@ -82,7 +82,7 @@
       </div>
     </div>
   </footer>
-  
+
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
