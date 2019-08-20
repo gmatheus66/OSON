@@ -34,6 +34,31 @@
       <input type="submit" value="Entrar">
     </form>
   <?php } ?>
+  <?php 
+    if(isset($_SESSION['preencher'])): ?>
+        <div>
+          <p style="color: red;">ERRO: Preencha todos os campos.</p>
+        </div>
+        <?php
+        endif;
+        unset($_SESSION['preencher']);
+
+         if(isset($_SESSION['senha_incorreta'])): ?>
+        <div>
+          <p style="color: red;">ERRO: E-mail ou Senha incorreto.</p>
+        </div>
+        <?php
+        endif;
+        unset($_SESSION['senha_incorreta']);
+
+        if(isset($_SESSION['nao_cadastrado'])): ?>
+        <div>
+          <p style="color: red;">ERRO: Usuário não cadastrado.</p>
+        </div>
+        <?php
+        endif;
+        unset($_SESSION['nao_cadastrado']);
+        ?>
 </body>
 </html>
         

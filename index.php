@@ -41,7 +41,7 @@
           <table>
             
           </table>
-          <p></p>
+          <p><a href="login.php">Entrar</a></p>
 
 
 
