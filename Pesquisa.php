@@ -30,9 +30,7 @@
             border: 1px solid black;
             border-collapse: collapse;
         }
-        h1{
-          
-        }
+        
         </style>
     </head>
     <body>
@@ -40,8 +38,8 @@
 
 
 <nav id="inicio" class="navBar" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">OSON</a>
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="brand-logo">OSON</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Cadastrar</a></li>
         <li><a href="#">Entrar</a></li>
@@ -50,9 +48,9 @@
         <li><a href="#">Cadastrar</a></li>
         <li><a href="#">Entrar</a></li>
       </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
 
   <div class="container">
    <div class="row">
@@ -61,38 +59,40 @@
           <div class="input-field col s11">
             <i class="material-icons prefix">search</i>
             <label for="autocomplete-input">Pesquisa</label>
-            <input type="text" name="select_genero" id="autocomplete-input" class="autocomplete">
+            <input type="text" name="Serie" id="autocomplete-input" class="autocomplete">
               <input type="submit" id="btnserie" value="Pesquisar" class="pesq">
 
 
           </div>
         </div>
       </div>
+    </div>
   </div>
 
   <div class="input-field col s9">
-    <select>
-      <option value="" disabled selected>Genero</option>
-       <?php foreach (genero() as $val): ?>
-        <option value="<?=$val["genre"]?>">
-          <?= $val["genre"]?></option>
-      <?php endforeach ?>
-    </select>
-    <label>Pesquise sua serie</label>
+    <select name="select_genero" id="select">
+      <option select>Genero</option>
+      <?php foreach (genero() as $val): ?>
+        <option value="<?= $val["genre"] ?>" > <?= $val["genre"] ?> </option>
+      <?php endforeach ?>          
+    </select>     
   </div>
-</div>
+
+
+
+
    
          
 
 
-        <table class="responsive-table">
+      <table class="responsive-table">
           
-       </table>
+      </table>
       
         <p></p>
 
-
- <script>
+</body>
+<script>
 
 
 
@@ -111,11 +111,11 @@
         $(function(){
             $('input[type=submit]').on('click',function(){
               
-              
+             
               let dados = $('#autocomplete-input').serializeArray(); 
               let dados2 = $('select').serialize();
               if($('select').val() != 'Genero'){
-                //dados.push({name:'select_genero', value: $('select').val()} );
+                dados.push({name:'select_genero', value: $('select').val()} );
               }
              console.log(dados);
               //console.log(dados);
@@ -156,7 +156,7 @@
                           '</tr>'
                         );                    
 
-                      $('#serie').val(''); 
+                      $('.autocomplete').val(''); 
                       $('select').prop('selectedIndex',0);
 
                    
@@ -174,7 +174,9 @@
 
             $('#select').on('click',function(){
               //console.log($('#select').serialize());
-              
+              //
+              //$('.autocomplete').val(''); 
+              console.log('click');
               let dados = $('#select').serialize();
               if($('select').val() == "Genero"){
 
@@ -193,6 +195,7 @@
 
                       success: function(data){
 
+                        console.log(data);
                         let d = JSON.parse(data);
                         console.log(d);
                         
