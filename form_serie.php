@@ -32,7 +32,7 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="text" name="age_range" placeholder="Age range">
+          <input type="number" name="age_range" placeholder="Age range">
         </div>
       </div>
       <div class="row">
