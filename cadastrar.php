@@ -1,3 +1,6 @@
+<?php
+$mesage = $_GET['ms'];
+?>
 <!DOCTYPE html>
 <html>
 	<head>

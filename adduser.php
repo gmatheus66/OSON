@@ -51,7 +51,7 @@ foreach ($un as $value_un) {
 
 
 if ($senha != $conf_senha){
-	redirect('cadastrar.php?ml=Senhas nulas ou não conferem.');
+	redirect('cadastrar.php?ms=Senhas nulas ou não conferem.');
 }
 
 if ($senha == '' || $conf_senha == " " || $conf_senha =='' || $conf_senha == null || $senha == null ) {
@@ -59,7 +59,7 @@ if ($senha == '' || $conf_senha == " " || $conf_senha =='' || $conf_senha == nul
 }
 
 if ($cpf == null || $cpf == " ") {
-	redirect('cadastrar.php?mt=CPF invalido ou nulo');
+	redirect('cadastrar.php?ms=CPF invalido ou nulo');
 }
 
 if ($teste_cpf == true && $teste_un == true) {
@@ -79,7 +79,7 @@ if ($teste_cpf == true && $teste_un == true) {
 		print_r($ex);
 	}
 }else{
-	redirect("cadastrar.php?mt=CPF invalido ou Username nulos");
+	redirect("cadastrar.php?ms=CPF invalido ou Username nulos");
 }
 
 redirect("login.php");
