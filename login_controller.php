@@ -3,11 +3,11 @@ session_start();
 include "conect.php";
 include 'funcs/init.php';
  
-$email = $_POST["email"] ?? "";
-$password = $_POST["password"] ?? "";
-$cpf = $_POST["email"] ?? "";
+$email = addslashes($_POST["email"]) ?? "";
+$password = addslashes($_POST["password"]) ?? "";
+$cpf = addslashes($_POST["email"]) ?? "";
 
-//$password = md5($password);
+$password = md5($password);
 
 if (empty($email) || empty($password)){
   $_SESSION['preencher']= true;
