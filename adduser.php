@@ -17,21 +17,16 @@ $teste_un;
 try{
 
 	$smt = $conn-> prepare("SELECT cpf FROM users;");
-	// $smt-> bindParam(1, $cpf);
 	$smt-> execute();
 	$b_cpf = $smt->fetchAll();
-	// var_dump($b_cpf);
 
 	$smmt = $conn -> prepare("SELECT username FROM users;");
 	$smmt -> execute();
 	$un= $smmt -> fetchAll();
-	// var_dump($un);
 
 }catch(PDOException $ex){
 	 $ex -> getmessage();
 }
-
-var_dump($b_cpf);
 
 foreach ($b_cpf as $value_cpf) {
 	if ($b_cpf[$value_cpf] != $cpf) {
@@ -54,18 +49,12 @@ if ($senha != $conf_senha){
 	redirect('cadastrar.php?ms=Senhas nulas ou não conferem.');
 }
 
-if ($senha == '' || $conf_senha == " " || $conf_senha =='' || $conf_senha == null || $senha == null ) {
-	// redirect('cadastrar.php?mr=Senha não pode estar em branco ou nulo');
-}
-
 if ($cpf == null || $cpf == " ") {
 	redirect('cadastrar.php?ms=CPF invalido ou nulo');
 }
 
 if ($teste_cpf == true && $teste_un == true) {
 	try{
-
-		echo "olha o teste";
 
 		$oson = $conn ->prepare("INSERT INTO users(name, username, email, password, cpf) VALUES (?, ?, ?, ?, ?)");
 		$oson -> bindParam(1, $nome);
@@ -79,7 +68,7 @@ if ($teste_cpf == true && $teste_un == true) {
 		print_r($ex);
 	}
 }else{
-	redirect("cadastrar.php?ms=CPF invalido ou Username nulos");
+	redirect("cadastrar.php?ms=CPF invalido ou Username nulo.");
 }
 
 redirect("login.php");
