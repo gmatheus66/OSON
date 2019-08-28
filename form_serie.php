@@ -19,7 +19,8 @@
           if (isset($_SESSION['id'])) {
         ?>
             <li><a href="form_serie.php">Cadastrar Séries</a></li>
-            <li><a href="Pesquisa.php"></a>Pesquisar</li> 
+            <li><a href="Pesquisa.php">Pesquisar</a></li>
+            <li><a href="logout.php">Sair</a></li> 
           <?php  
           }else{ 
           ?>

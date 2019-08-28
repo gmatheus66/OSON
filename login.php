@@ -32,7 +32,7 @@
     <form class="col s12" id="reg-form" method="POST" action="login_controller.php">
       <div class="row">
         <div class="input-field col s12">
-          <input type="email" name="email" placeholder="Email ou CPF">
+          <input type="text" name="email" placeholder="Email ou CPF">
         </div>
       </div>
       <div class="row">

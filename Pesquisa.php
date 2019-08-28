@@ -1,8 +1,6 @@
 <?php 
-    include 'conect.php';
+    session_start();
     include 'init.php';
-    //var_dump(genero());
-    
 ?>
 
 <!DOCTYPE html>
@@ -38,19 +36,27 @@
 
 
 <nav id="inicio" class="navBar" role="navigation">
-  <div class="nav-wrapper container">
-    <a id="logo-container" href="#" class="brand-logo">OSON</a>
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">OSON</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Cadastrar</a></li>
-        <li><a href="#">Entrar</a></li>
+        <?php 
+          if (isset($_SESSION['id'])) {
+        ?>
+            <li><a href="form_serie.php">Cadastrar Séries</a></li>
+            <li><a href="Pesquisa.php">Pesquisar</a></li> 
+            <li><a href="logout.php">Sair</a></li>
+          <?php  
+          }else{ 
+          ?>
+            <li><a href="cadastrar.php">Cadastrar</a></li>
+            <li><a href="login.php">Entrar</a></li>
+        <?php
+          }
+        ?>
       </ul>
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Cadastrar</a></li>
-        <li><a href="#">Entrar</a></li>
-      </ul>
-    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-  </div>
-</nav>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
   <div class="container">
    <div class="row">
