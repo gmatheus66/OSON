@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,27 @@
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
+  <nav id="inicio" class="navBar" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.php" class="brand-logo">OSON</a>
+      <ul class="right hide-on-med-and-down">
+        <?php 
+          if (isset($_SESSION['id'])) {
+        ?>
+            <li><a href="form_serie.php">Cadastrar Séries</a></li>
+            <li><a href="Pesquisa.php"></a>Pesquisar</li> 
+          <?php  
+          }else{ 
+          ?>
+            <li><a href="cadastrar.php">Cadastrar</a></li>
+            <li><a href="login.php">Entrar</a></li>
+        <?php
+          }
+        ?>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 <div class="div">
 <div class="form">
   <div class="row">
