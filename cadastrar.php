@@ -15,10 +15,10 @@ $mesage = $_GET['ms'];
 <body>
   <nav id="inicio" class="navBar" role="navigation">
     <div class="nav-wrapper container">
-       <a id="logo-container" href="index.html" class="brand-logo">OSON</a>
+       <a id="logo-container" href="index.php" class="brand-logo">OSON</a>
      <ul class="right hide-on-med-and-down">
         <li><a href="cadastrar.php">Cadastrar</a></li>
-        <li><a href="#">Entrar</a></li>
+        <li><a href="login.php">Entrar</a></li>
       </ul>
       <ul id="nav-mobile" class="sidenav">
         <li><a href="cadastrar.html">Cadastrar</a></li>
