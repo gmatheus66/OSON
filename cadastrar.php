@@ -21,8 +21,8 @@ $mesage = $_GET['ms'];
         <li><a href="login.php">Entrar</a></li>
       </ul>
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="cadastrar.html">Cadastrar</a></li>
-        <li><a href="#">Entrar</a></li>
+        <li><a href="cadastrar.php">Cadastrar</a></li>
+        <li><a href="login.php">Entrar</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
   </div>
