@@ -3,6 +3,7 @@ session_start();
 $username = $_SESSION['username'];
 $email = $_SESSION['email'];
 $nome = $_SESSION['name'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,9 +22,10 @@ $nome = $_SESSION['name'];
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">OSON</a>
       <ul class="right hide-on-med-and-down">
-        <li class='username'><a><?=$username?></a></li>
-        <li><a href="cadastrar.php">Cadastrar</a></li>
-        <li><a href="login.php">Entrar</a></li>
+        <li><a><?=$username?></a></li>
+        <li><a href="form_serie.php">Cadastrar Séries</a></li>
+        <li><a href="Pesquisa.php">Pesquisar</a></li> 
+        <li><a href="logout.php">Sair</a></li>
       </ul>
       <ul id="nav-mobile" class="sidenav">
         <li><a href="#">Cadastrar</a></li>
