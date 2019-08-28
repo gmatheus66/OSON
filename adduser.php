@@ -1,5 +1,5 @@
 <?php
-include "conect.php";
+include "init.php";
 include 'funcs/init.php';
 
 $nome = $_POST["nome"] ?? "";

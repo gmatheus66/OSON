@@ -1,5 +1,5 @@
 <?php 
-include "conect.php";
+include 'init.php';
 
 
 $serie = $_POST["Serie"];

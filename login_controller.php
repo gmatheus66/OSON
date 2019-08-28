@@ -1,6 +1,5 @@
 <?php
-session_start();
-include "conect.php";
+include'init.php';
 include 'funcs/init.php';
  
 $email = addslashes($_POST["email"]) ?? "";

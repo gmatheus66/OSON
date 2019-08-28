@@ -1,5 +1,4 @@
 <?php 
-    session_start();
     include 'init.php';
 ?>
 
@@ -66,10 +65,10 @@
             <i class="material-icons prefix">search</i>
             <label for="autocomplete-input">Pesquisa</label>
             <input type="text" name="Serie" id="autocomplete-input" class="autocomplete">
-              <input type="submit" id="btnserie" value="Pesquisar" class="pesq">
-
-
-          </div>
+             <button class="btn waves-effect waves-light" type="submit" name="action">Pesquisar
+                  <i class="material-icons right">search</i>
+              </button>
+            </div>
         </div>
       </div>
     </div>
@@ -83,15 +82,7 @@
       <?php endforeach ?>          
     </select>     
   </div>
-
-
-
-
-   
-         
-
-
-      <table class="responsive-table">
+    <table class="responsive-table">
           
       </table>
       

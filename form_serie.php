@@ -1,5 +1,5 @@
 <?php 
-  session_start();
+  include 'init.php';
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +36,7 @@
 <div class="div">
 <div class="form">
   <div class="row">
-    <form class="col s12" id="reg-form" method="POST" action="">
+    <form class="col s12" id="reg-form" method="POST" action="cadastrar_serie.php">
       <div class="row">
         <div class="input-field col s6">
          <input type="text" name="name" placeholder="Nome">
@@ -57,12 +57,12 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="number" name="age_range" placeholder="Age range">
+          <input type="number" name="age_range" placeholder="Age range" min="0">
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="number" name="lauch_year" placeholder="lauch_year" min="1000">
+          <input type="number" name="lauch_year" placeholder="lauch_year" min="1900">
         </div>
       </div>
       <div class="row">

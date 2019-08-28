@@ -1,6 +1,4 @@
 <?php
-    session_start(); 
-    include 'conect.php';
     include 'init.php';
 ?>
 <!DOCTYPE html>
